@@ -1,0 +1,41 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class addingItems {
+
+	public static void main(String[] args) throws InterruptedException {
+		//Invoking Browser
+		//Chrome - ChromeDriver 
+						
+		System.setProperty("webdriver.chrome.driver", "/Users/shivarchetty/Downloads/chromedriver");		
+		WebDriver driver = new ChromeDriver();
+		
+		//Opening the page
+		driver.get("https://beta.warrenroman.com/project-rocket-raccoon/home");
+		
+		//Clicking on the add button
+		driver.findElement(By.className("ajaxModalLauncher")).click();
+		
+		//Allow wait time, for box to open before editing 
+		Thread.sleep(1000);
+		
+		//Editing the title box, adding Cooldrink
+		driver.findElement(By.id("staticEmail")).sendKeys("Cooldrink");
+		
+		//Editing the description box Fanta
+		driver.findElement(By.name("description")).sendKeys("Fanta");
+		
+		//Clicking on submit button to complete the adding of items. Using xpath
+		driver.findElement(By.xpath("//input[@value='Submit']")).click();
+		
+		//Allow wait time  before clicking on complete.
+		Thread.sleep(1000);
+		
+		//Clicking on the complete button,using xpath
+		driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div/div[6]/div[5]/a")).click();
+		
+
+	}
+
+}

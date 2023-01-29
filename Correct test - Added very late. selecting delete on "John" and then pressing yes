@@ -23,3 +23,13 @@ public class RoomRaccoonAutomation {
 		Thread.sleep(1000);
 		//clicking on the yes button by using xpath to find the find the element
 		driver.findElement(By.xpath("//div[@class='col-5 mx-auto']/button[1]")).click();
+		
+		//Allow for 1 second to pass first
+		Thread.sleep(1000);
+		//Complete the delete on the homepage  by clicking on complete
+		driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div/div[3]/div[5]/a")).click();
+		
+		
+	}
+
+}

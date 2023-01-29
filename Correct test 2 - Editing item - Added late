@@ -1,0 +1,33 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Automation2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		//Invoking Browser
+				//Chrome - ChromeDriver 
+						
+				
+				System.setProperty("webdriver.chrome.driver", "/Users/shivarchetty/Downloads/chromedriver");		
+				WebDriver driver = new ChromeDriver();
+				
+				//Opening the page
+				driver.get("https://beta.warrenroman.com/project-rocket-raccoon/home");
+				//clicking on the edit button for bread. Using xpath
+				
+				driver.findElement(By.xpath("//html/body/div[1]/div[2]/div/div/div/div[3]/div[3]/a")).click();
+				
+				//Allow wait time for next window to pop cup, before editing window.
+				Thread.sleep(1000);
+				
+				//Edit title box, change Bread to Bread&Rolls
+				driver.findElement(By.id("staticEmail")).sendKeys("&Rolls");
+				
+				//Clicking on the submit button, after editing the title
+				driver.findElement(By.xpath("//*[@id=\"myModal\"]/div/div/div[2]/form/div[3]/div/div/div[1]/button")).click();
+				
+
+	}
+
+}

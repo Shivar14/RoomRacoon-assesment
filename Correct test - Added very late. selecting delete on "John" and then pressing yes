@@ -1,0 +1,25 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class RoomRaccoonAutomation {
+
+	public static void main(String[] args) throws InterruptedException {
+		//Invoking Browser
+		//Chrome - ChromeDriver 
+				
+		
+		System.setProperty("webdriver.chrome.driver", "/Users/shivarchetty/Downloads/chromedriver");		
+		WebDriver driver = new ChromeDriver();
+		
+		//Opening the page
+		driver.get("https://beta.warrenroman.com/project-rocket-raccoon/home");
+		//clicking on the delete button for john. Using xpath
+		
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div[2]/div[4]/a")).click();
+		//Allow for 1 second to pass, to allow for the button to be pressed. Need to allow for wait time for the test to complete
+		Thread.sleep(1000);
+		//clicking on the yes button by using xpath to find the find the element
+		driver.findElement(By.xpath("//div[@class='col-5 mx-auto']/button[1]")).click();
